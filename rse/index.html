@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/icon/ai.svg" type="image/svg+xml">
+  <title>Airse | Atmosphere Open World</title>
+</head>
+<body style="opacity:0">
+
+<svg style="position:absolute;width:0;height:0">
+  <defs>
+    <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a7ca5"/>
+      <stop offset="100%" stop-color="#6a5acd"/>
+    </linearGradient>
+  </defs>
+</svg>
+<canvas id="space-canvas"></canvas>
+<div class="vignette"></div>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <a href="/" class="header-logo">
+    <img src="/icon/ai.svg" alt="Airse" class="header-logo-icon">
+    <span class="header-logo-text">Airse</span>
+  </a>
+  <div class="lang-selector" id="lang-selector">
+    <button type="button" class="lang-btn" id="lang-tab">
+      <img src="/icon/language.svg" alt="Lang" class="lang-icon">
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown">
+      <div class="lang-option selected" data-lang="en">
+        <span class="lang-name">EN</span>
+        <span class="lang-check">&#10003;</span>
+      </div>
+      <div class="lang-option" data-lang="ja">
+        <span class="lang-name">JA</span>
+        <span class="lang-check">&#10003;</span>
+      </div>
+    </div>
+  </div>
+  <div class="menu-selector" id="menu-selector">
+    <button type="button" class="menu-btn" id="menu-btn">
+      <img src="/icon/menu.svg" alt="Menu" class="menu-icon">
+    </button>
+    <div class="menu-dropdown" id="menu-dropdown">
+      <a href="/" class="menu-option">
+        <span class="menu-option-text">Airse</span>
+      </a>
+      <a href="/account" class="menu-option">
+        <span class="menu-option-text" data-lang-en="Account" data-lang-ja="アカウント">Account</span>
+      </a>
+      <a href="/privacy" class="menu-option">
+        <span class="menu-option-text" data-lang-en="Privacy" data-lang-ja="プライバシー">Privacy</span>
+      </a>
+      <a href="/terms" class="menu-option">
+        <span class="menu-option-text" data-lang-en="Terms" data-lang-ja="利用規約">Terms</span>
+      </a>
+      <a href="/support" class="menu-option">
+        <span class="menu-option-text" data-lang-en="Support" data-lang-ja="サポート">Support</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- FOOTER -->
+<footer class="site-footer" id="site-footer">
+  <div class="footer-copy">&copy;syui</div>
+</footer>
+
+<!-- PAGE 1: Video -->
+<div id="page-video" class="page">
+  <div class="hero-video">
+    <video id="game-video" src="/video.mp4" autoplay muted playsinline loop></video>
+    <div class="video-text">
+      <div class="video-title-wrap">
+        <img src="/icon/ai.svg" alt="" class="video-title-icon">
+        <div class="video-label">Airse</div>
+      </div>
+      <div class="video-separator"></div>
+      <div class="video-desc">Atmosphere Open World</div>
+    </div>
+    <div class="video-apps">
+      <div class="video-apps-group">
+        <span class="video-apps-label">Windows</span>
+        <a href="https://store.epicgames.com/ja/p/airse-ef542f" class="video-app-link" target="_blank" rel="noopener">
+          <img src="/service/ai.syui.rse.png" alt="Airse" class="video-app-icon">
+          <span class="video-app-name">Airse</span>
+        </a>
+      </div>
+      <div class="video-apps-group">
+        <span class="video-apps-label">Mac</span>
+        <a href="https://apps.apple.com/app/id6754494953" class="video-app-link" target="_blank" rel="noopener">
+          <img src="/service/ai.syui.rse.png" alt="Airse" class="video-app-icon">
+          <span class="video-app-name">Airse</span>
+        </a>
+      </div>
+      <div class="video-apps-group">
+        <span class="video-apps-label">iOS</span>
+        <a href="https://apps.apple.com/app/id6754494806" class="video-app-link" target="_blank" rel="noopener">
+          <img src="/service/ai.syui.card.png" alt="Aicard" class="video-app-icon">
+          <span class="video-app-name">Aicard</span>
+        </a>
+        <a href="https://apps.apple.com/app/id6756220616" class="video-app-link" target="_blank" rel="noopener">
+          <img src="/service/ai.syui.at.png" alt="Aiat" class="video-app-icon">
+          <span class="video-app-name">Aiat</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <button id="btn-next" class="nav-btn nav-btn-right" aria-label="Next">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="20,15 33,24 20,33" fill="url(#nav-grad)"/></svg>
+  </button>
+</div>
+
+<!-- PAGE: Logo -->
+<div id="page-logo" class="page page-hidden">
+  <button id="btn-logo-back" class="nav-btn nav-btn-left" aria-label="Back">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="28,15 15,24 28,33" fill="url(#nav-grad)"/></svg>
+  </button>
+  <img src="/icon/ai.svg" alt="Airse" class="logo-icon">
+  <button id="btn-logo-next" class="nav-btn nav-btn-right" aria-label="Next">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="20,15 33,24 20,33" fill="url(#nav-grad)"/></svg>
+  </button>
+</div>
+
+<!-- PAGE 2: Message -->
+<div id="page-message" class="page page-hidden">
+  <button id="btn-msg-back" class="nav-btn nav-btn-left" aria-label="Back">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="28,15 15,24 28,33" fill="url(#nav-grad)"/></svg>
+  </button>
+  <div class="message-content">
+    <h1 class="message-title" data-lang-en="GAME × SNS" data-lang-ja="ゲーム × SNS"></h1>
+    <div class="message-separator"></div>
+    <p class="message-desc" data-lang-en="A game built on social networks." data-lang-ja="ソーシャルネットワーク上に構築されたゲーム。">A game built on social networks.</p>
+  </div>
+  <button id="btn-msg-next" class="nav-btn nav-btn-right" aria-label="Next">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="20,15 33,24 20,33" fill="url(#nav-grad)"/></svg>
+  </button>
+</div>
+
+<!-- PAGE 3: Message 2 -->
+<div id="page-message2" class="page page-hidden">
+  <button id="btn-msg2-back" class="nav-btn nav-btn-left" aria-label="Back">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="28,15 15,24 28,33" fill="url(#nav-grad)"/></svg>
+  </button>
+  <div class="message-content">
+    <h1 class="message-title" data-lang-en="Ai × Universe" data-lang-ja="アイ × 宇宙">Ai × Universe</h1>
+    <div class="message-separator"></div>
+    <p class="message-desc" data-lang-en="The theme is the universe and ai." data-lang-ja="テーマは宇宙とアイ。">The theme is the universe and ai.</p>
+  </div>
+  <button id="btn-msg2-next" class="nav-btn nav-btn-right" aria-label="Next">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="20,15 33,24 20,33" fill="url(#nav-grad)"/></svg>
+  </button>
+</div>
+
+<!-- PAGE: About -->
+<div id="page-about" class="page page-hidden">
+  <button id="btn-about-back" class="nav-btn nav-btn-left" aria-label="Back">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="28,15 15,24 28,33" fill="url(#nav-grad)"/></svg>
+  </button>
+  <div class="subpage-content">
+    <h1 class="subpage-heading">Airse</h1>
+    <div class="subpage-section-line"></div>
+    <p class="subpage-section-text" data-lang-en="Atmosphere Open World." data-lang-ja="Atmosphere Open World.">Atmosphere Open World.</p>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="GAME × SNS" data-lang-ja="ゲーム × SNS">GAME × SNS</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="Your SNS account becomes your game account." data-lang-ja="SNSアカウントがゲームアカウントになります。">Your SNS account becomes your game account.</p>
+      <p class="subpage-section-text" data-lang-en="Game data is stored on decentralized social networks like Bluesky — your world, your data." data-lang-ja="ゲームデータはBlueskyなどの分散型SNSに保存されます。あなたの世界、あなたのデータ。">Game data is stored on decentralized social networks like Bluesky — your world, your data.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Ai × Universe" data-lang-ja="アイ × 宇宙">Ai × Universe</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="The theme is the universe." data-lang-ja="テーマは宇宙。">The theme is the universe.</p>
+      <p class="subpage-section-text" data-lang-en="&quot;Ai&quot; refers to elemental attributes that exist in this world." data-lang-ja="「アイ」はこの世界に存在する属性のこと。">"Ai" refers to elemental attributes that exist in this world.</p>
+      <p class="subpage-section-text" data-lang-en="A combat system built around elemental reactions." data-lang-ja="属性反応を軸にした戦闘システム。">A combat system built around elemental reactions.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Elements" data-lang-ja="属性">Elements</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="Elements are named after real particles — atoms, neutrons, and more." data-lang-ja="属性は実在する粒子の名前 — 原子、中性子など。">Elements are named after real particles — atoms, neutrons, and more.</p>
+      <p class="subpage-section-text" data-lang-en="Each character holds one element." data-lang-ja="各キャラクターは1つの属性を持つ。">Each character holds one element.</p>
+      <p class="subpage-section-text" data-lang-en="Land an elemental attack to apply a status. Strike again with another element for massive damage." data-lang-ja="属性攻撃でステータスを付与し、別の属性で追撃すると大ダメージ。">Land an elemental attack to apply a status. Strike again with another element for massive damage.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Growth" data-lang-ja="育成">Growth</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="Leveling up means ascending limits." data-lang-ja="レベルは上限解放。">Leveling up means ascending limits.</p>
+      <p class="subpage-section-text" data-lang-en="Characters, items, and cards each serve different roles but share common stats." data-lang-ja="キャラクター、アイテム、カードはそれぞれ異なる役割を持ちつつ、それぞれ固有値、全体値という2つの値を持ちます。">Characters, items, and cards each serve different roles but share common stats.</p>
+      <p class="subpage-section-text" data-lang-en="Items grant EXP. Cards unlock skills." data-lang-ja="アイテムは経験値、カードは技の解放です。">Items grant EXP. Cards unlock skills.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Characters" data-lang-ja="キャラクター">Characters</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="Character acquisition is seasonal." data-lang-ja="キャラクターの獲得はシーズンになります。">Character acquisition is seasonal.</p>
+      <p class="subpage-section-text" data-lang-en="When a new season begins, new characters become available." data-lang-ja="次のシーズンに移行すると、新しいキャラクターを獲得できます。">When a new season begins, new characters become available.</p>
+      <p class="subpage-section-text" data-lang-en="The season you join determines your starting character." data-lang-ja="参加時のシーズンで最初に扱えるキャラクターが決まります。">The season you join determines your starting character.</p>
+      <p class="subpage-section-text" data-lang-en="Each character has four elements: Attribute (Ai), Skill (Yui), Global Value, and Unique Value." data-lang-ja="キャラクターには、4つの要素があります。属性(アイ)、技(ユイ)、全体値、固有値です。">Each character has four elements: Attribute (Ai), Skill (Yui), Global Value, and Unique Value.</p>
+      <p class="subpage-section-text" data-lang-en="Skills are called Yui in this world — equipping a card unlocks them." data-lang-ja="技はこの世界でユイと呼ばれ、カードを持っていると使えるようになります。">Skills are called Yui in this world — equipping a card unlocks them.</p>
+      <p class="subpage-section-text" data-lang-en="Global Value is called CP, which is distributed across base stats." data-lang-ja="全体値は、CPと呼ばれ、その値が基礎ステータスに割り振られます。">Global Value is called CP, which is distributed across base stats.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Cards" data-lang-ja="カード">Cards</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="You can draw cards in the iOS app Aicard." data-lang-ja="iOSアプリのAicardでカードを引くことができます。">You can draw cards in the iOS app Aicard.</p>
+      <p class="subpage-section-text" data-lang-en="Owning a card lets you apply it in the game." data-lang-ja="持っていると、ゲームに反映することができます。">Owning a card lets you apply it in the game.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Story" data-lang-ja="物語">Story</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="The story is a quest for the smallest matter." data-lang-ja="物語は、小さい物質の探求。">The story is a quest for the smallest matter.</p>
+    </div>
+  </div>
+  <button id="btn-about-next" class="nav-btn nav-btn-right" aria-label="Next">
+    <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="url(#nav-grad)" stroke-width="1" fill="none"/><polygon points="20,15 33,24 20,33" fill="url(#nav-grad)"/></svg>
+  </button>
+</div>
+
+
+<!-- PAGE: Title -->
+<div id="page-title" class="page page-full page-hidden">
+  <div class="hero-video">
+    <video src="/video.mp4" autoplay muted playsinline loop></video>
+    <div class="video-text">
+      <div class="video-title-wrap">
+        <img src="/icon/ai.svg" alt="" class="video-title-icon">
+        <div class="video-label video-label-lg">Airse</div>
+      </div>
+      <div class="video-separator"></div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

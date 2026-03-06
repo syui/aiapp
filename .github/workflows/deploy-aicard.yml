@@ -1,0 +1,38 @@
+name: Deploy Aicard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/src/sites/aicard.json'
+      - 'web/src/assets/aicard/**'
+      - 'web/src/assets/common/**'
+      - 'web/src/content/**'
+      - 'web/src/templates/**'
+      - 'web/src/types.ts'
+      - 'web/src/build.ts'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+        working-directory: web
+      - run: npm run build
+        working-directory: web
+      - uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ secrets.APP_CARD_NAME }}
+          directory: web/dist/aicard
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'

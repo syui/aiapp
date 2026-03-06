@@ -1,0 +1,28 @@
+{
+  "name": "app-pages",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "watch": "tsx watch src/build.ts",
+    "serve": "npx serve dist",
+    "serve:aiat": "npx serve dist/aiat -p 3000",
+    "serve:aicard": "npx serve dist/aicard -p 3001",
+    "serve:airse": "npx serve dist/airse -p 3002",
+    "dev": "npm run build && npx concurrently \"npm run watch\" \"npm run serve:aiat\"",
+    "dev:aiat": "npm run build && npx concurrently \"npm run watch\" \"npm run serve:aiat\"",
+    "dev:aicard": "npm run build && npx concurrently \"npm run watch\" \"npm run serve:aicard\"",
+    "dev:airse": "npm run build && npx concurrently \"npm run watch\" \"npm run serve:airse\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "concurrently": "^9.0.0",
+    "serve": "^14.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "marked": "^15.0.0",
+    "gray-matter": "^4.0.3"
+  }
+}

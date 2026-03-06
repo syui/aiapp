@@ -1,0 +1,8 @@
+.claude
+.DS_Store 
+claude.md
+CLAUDE.md
+node_modules
+package-lock.json
+dist
+/rse/video.mp4

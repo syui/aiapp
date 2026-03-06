@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/icon/ai.svg" type="image/svg+xml">
+  <title>Privacy Policy | Airse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--c-bg:#f5f5f8;--c-text:#1a1a2e;--c-accent:#3a7ca5;--c-accent2:#6a5acd;--c-dim:#8888a0;--f-d:'Orbitron',sans-serif;--f-b:'Space Mono',monospace}
+html,body{width:100%;height:100%;background:var(--c-bg);color:var(--c-text);font-size:calc(1rem + 3px)}
+.site-header{position:fixed;top:0;left:0;width:100%;height:5rem;padding:0 2rem;display:flex;align-items:center;z-index:110;background:var(--c-bg)}
+.header-logo{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--c-text);margin-right:auto}
+.header-logo-icon{width:24px;height:24px}
+.header-logo-text{font-family:var(--f-d);font-weight:700;font-size:.85rem;letter-spacing:.1em}
+.site-footer{position:fixed;bottom:0;left:0;width:100%;padding:1.5rem 2rem 2.5rem;z-index:110;display:flex;flex-direction:column;align-items:center;background:var(--c-bg)}
+.footer-copy{font-family:var(--f-b);font-size:.6rem;letter-spacing:.1em;color:var(--c-dim)}
+.lang-selector{position:relative}
+.lang-btn{display:flex;align-items:center;justify-content:center;background:0 0;border:none;border-radius:6px;cursor:pointer;padding:6px;opacity:.4;transition:opacity .3s,background .3s}
+.lang-btn:hover{opacity:.9;background:rgba(26,26,46,.06)}
+.lang-icon{width:20px;height:20px}
+.lang-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:4px;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);min-width:100px;overflow:hidden}
+.lang-dropdown.show{display:block}
+.lang-option{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;cursor:pointer;font-family:var(--f-b);font-size:.75rem;letter-spacing:.05em;transition:background .15s}
+.lang-option:hover{background:#f0f0f0}
+.lang-option.selected{background:linear-gradient(135deg,#f0f7ff,#e8f4ff)}
+.lang-check{width:18px;height:18px;border-radius:50%;border:2px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all .2s;color:transparent}
+.lang-option.selected .lang-check{background:var(--c-accent);border-color:var(--c-accent);color:#fff}
+.menu-selector{position:relative;margin-left:8px}
+.menu-btn{display:flex;align-items:center;justify-content:center;background:0 0;border:none;border-radius:6px;cursor:pointer;padding:6px;opacity:.4;transition:opacity .3s,background .3s}
+.menu-btn:hover{opacity:.9;background:rgba(26,26,46,.06)}
+.menu-icon{width:20px;height:20px}
+.menu-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:4px;background:#fff;border:1px solid #ddd;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.1);min-width:180px;overflow:hidden}
+.menu-dropdown.show{display:block}
+.menu-option{display:flex;align-items:center;padding:10px 14px;cursor:pointer;font-family:var(--f-b);font-size:.75rem;letter-spacing:.05em;transition:background .15s}
+.menu-option:hover{background:#f0f0f0}
+a.menu-option{text-decoration:none;color:inherit}
+.menu-option-active{background:linear-gradient(135deg,#f0f7ff,#e8f4ff)}
+.page{position:fixed;top:5rem;left:0;width:100%;height:calc(100% - 5rem);z-index:10;display:flex;flex-direction:column;align-items:center;background:var(--c-bg);justify-content:flex-start;overflow-y:auto}
+.subpage-content{width:100%;max-width:640px;margin:0 auto;padding:4rem 2rem 6rem}
+.subpage-heading{font-family:var(--f-d);font-weight:700;font-size:clamp(1rem,2.5vw,1.4rem);letter-spacing:.1em;color:var(--c-text);margin-bottom:.8rem}
+.subpage-section{margin-top:2.5rem}
+.subpage-section-title{font-family:var(--f-d);font-weight:700;font-size:clamp(.85rem,1.8vw,1.1rem);letter-spacing:.1em;color:var(--c-text);margin-bottom:.8rem}
+.subpage-section-line{width:clamp(40px,8vw,80px);height:1px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2),transparent);margin-bottom:1rem}
+.subpage-section-text{font-family:var(--f-b);font-size:clamp(.65rem,1.1vw,.8rem);line-height:2;letter-spacing:.05em;color:rgba(26,26,46,.6)}
+.subpage-list{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.subpage-list-item{font-family:var(--f-b);font-size:clamp(.65rem,1.1vw,.8rem);line-height:2;letter-spacing:.05em;color:rgba(26,26,46,.6);padding-left:1.2em;position:relative}
+.subpage-list-item::before{content:'';position:absolute;left:0;top:.85em;width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,var(--c-accent),var(--c-accent2))}
+.subpage-section-text a{color:var(--c-accent);text-decoration:none;word-break:break-all}
+.subpage-section-text a:hover{text-decoration:underline}
+.subpage-section-text code{background:rgba(26,26,46,.06);padding:.15em .4em;border-radius:3px;font-size:.9em}
+@media(max-width:768px){.site-header{padding:.8rem 1rem}.site-footer{padding:1rem 1rem 1.5rem}}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="header-logo">
+    <img src="/icon/ai.svg" alt="Airse" class="header-logo-icon">
+    <span class="header-logo-text">Airse</span>
+  </a>
+  <div class="lang-selector">
+    <button type="button" class="lang-btn" id="lang-tab">
+      <img src="/icon/language.svg" alt="Lang" class="lang-icon">
+    </button>
+    <div class="lang-dropdown" id="lang-dropdown">
+      <div class="lang-option selected" data-lang="en"><span class="lang-name">EN</span><span class="lang-check">&#10003;</span></div>
+      <div class="lang-option" data-lang="ja"><span class="lang-name">JA</span><span class="lang-check">&#10003;</span></div>
+    </div>
+  </div>
+  <div class="menu-selector">
+    <button type="button" class="menu-btn" id="menu-btn">
+      <img src="/icon/menu.svg" alt="Menu" class="menu-icon">
+    </button>
+    <div class="menu-dropdown" id="menu-dropdown">
+      <a href="/" class="menu-option"><span class="menu-option-text">Airse</span></a>
+      <a href="/account" class="menu-option"><span class="menu-option-text" data-lang-en="Account" data-lang-ja="アカウント">Account</span></a>
+      <a href="/privacy" class="menu-option menu-option-active"><span class="menu-option-text" data-lang-en="Privacy" data-lang-ja="プライバシー">Privacy</span></a>
+      <a href="/terms" class="menu-option"><span class="menu-option-text" data-lang-en="Terms" data-lang-ja="利用規約">Terms</span></a>
+      <a href="/support" class="menu-option"><span class="menu-option-text" data-lang-en="Support" data-lang-ja="サポート">Support</span></a>
+    </div>
+  </div>
+</header>
+
+<footer class="site-footer"><div class="footer-copy">&copy;syui</div></footer>
+
+<div class="page">
+  <div class="subpage-content">
+    <h1 class="subpage-heading" data-lang-en="Privacy Policy" data-lang-ja="プライバシーポリシー">Privacy Policy</h1>
+    <div class="subpage-section-line"></div>
+    <p class="subpage-section-text" data-lang-en="Airse is an open-world action game that utilizes the AT Protocol for account authentication. This Privacy Policy explains how we handle your information when you use our game." data-lang-ja="Airseは、AT Protocolをアカウント認証に利用するオープンワールドアクションゲームです。本プライバシーポリシーは、ゲーム利用時における情報の取り扱いについて説明します。">Airse is an open-world action game that utilizes the AT Protocol for account authentication. This Privacy Policy explains how we handle your information when you use our game.</p>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Information Collection" data-lang-ja="情報の収集">Information Collection</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="We do not collect any personal information." data-lang-ja="個人情報は一切収集しません。">We do not collect any personal information.</p>
+      <p class="subpage-section-text" data-lang-en="Airse does not track, store, or analyze any user data, gameplay statistics, or personal information. Your gaming experience remains private." data-lang-ja="Airseはユーザーデータ、ゲームプレイ統計、個人情報の追跡・保存・分析を行いません。ゲーム体験はプライベートに保たれます。">Airse does not track, store, or analyze any user data, gameplay statistics, or personal information. Your gaming experience remains private.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Account Authentication" data-lang-ja="アカウント認証">Account Authentication</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="Airse uses AT Protocol for account login functionality. When you log in:" data-lang-ja="AirseはAT Protocolをアカウントログインに使用します。ログイン時:">Airse uses AT Protocol for account login functionality. When you log in:</p>
+      <ul class="subpage-list">
+        <li class="subpage-list-item" data-lang-en="We only use your AT Protocol identity for authentication purposes." data-lang-ja="AT Protocolのアイデンティティは認証目的のみに使用します。">We only use your AT Protocol identity for authentication purposes.</li>
+        <li class="subpage-list-item" data-lang-en="No additional data is collected or stored beyond what is necessary for login." data-lang-ja="ログインに必要な範囲を超えたデータの収集・保存は行いません。">No additional data is collected or stored beyond what is necessary for login.</li>
+        <li class="subpage-list-item" data-lang-en="Your credentials are handled securely through the AT Protocol." data-lang-ja="認証情報はAT Protocolを通じて安全に処理されます。">Your credentials are handled securely through the AT Protocol.</li>
+      </ul>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="syu.is Service Users" data-lang-ja="syu.isサービス利用者">syu.is Service Users</h2>
+      <div class="subpage-section-line"></div>
+      <ul class="subpage-list">
+        <li class="subpage-list-item" data-lang-en="The service operator reserves the right to suspend or terminate (ban) accounts at their discretion." data-lang-ja="サービス運営者は、自身の裁量でアカウントの停止または終了（BAN）を行う権利を有します。">The service operator reserves the right to suspend or terminate (ban) accounts at their discretion.</li>
+        <li class="subpage-list-item" data-lang-en="This may occur in cases of terms of service violations or inappropriate behavior." data-lang-ja="利用規約違反や不適切な行為があった場合に行われることがあります。">This may occur in cases of terms of service violations or inappropriate behavior.</li>
+        <li class="subpage-list-item" data-lang-en="Account suspension decisions are final." data-lang-ja="アカウント停止の判断は最終的なものです。">Account suspension decisions are final.</li>
+      </ul>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Third-Party Services" data-lang-ja="第三者サービス">Third-Party Services</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="Airse relies on AT Protocol infrastructure. Please refer to the privacy policies of your AT Protocol provider (PDS) for information about how they handle your data." data-lang-ja="AirseはAT Protocolのインフラに依存しています。データの取り扱いについては、ご利用のAT Protocolプロバイダー（PDS）のプライバシーポリシーをご参照ください。">Airse relies on AT Protocol infrastructure. Please refer to the privacy policies of your AT Protocol provider (PDS) for information about how they handle your data.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Changes to This Policy" data-lang-ja="ポリシーの変更">Changes to This Policy</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date." data-lang-ja="本プライバシーポリシーは随時更新されることがあります。変更は本ページに更新日とともに掲載されます。">We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+    </div>
+    <div class="subpage-section">
+      <h2 class="subpage-section-title" data-lang-en="Contact" data-lang-ja="お問い合わせ">Contact</h2>
+      <div class="subpage-section-line"></div>
+      <p class="subpage-section-text" data-lang-en="If you have any questions about this Privacy Policy, please contact the developer." data-lang-ja="本プライバシーポリシーについてご質問がある場合は、開発者にお問い合わせください。">If you have any questions about this Privacy Policy, please contact the developer.</p>
+      <p class="subpage-section-text"><a href="https://github.com/syui" target="_blank" rel="noopener">https://github.com/syui</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+!function(){var l=localStorage.getItem('preferred-lang')||'en',d=document,lb=d.getElementById('lang-tab'),ld=d.getElementById('lang-dropdown'),mb=d.getElementById('menu-btn'),md=d.getElementById('menu-dropdown');function a(g){d.querySelectorAll('[data-lang-en]').forEach(function(e){var t=e.getAttribute('data-lang-'+g);if(t)e.innerHTML=t});ld.querySelectorAll('.lang-option').forEach(function(o){o.classList.toggle('selected',o.dataset.lang===g)})}lb.onclick=function(e){e.stopPropagation();ld.classList.toggle('show');md.classList.remove('show')};ld.querySelectorAll('.lang-option').forEach(function(o){o.onclick=function(e){e.stopPropagation();l=o.dataset.lang||'en';localStorage.setItem('preferred-lang',l);a(l);ld.classList.remove('show')}});mb.onclick=function(e){e.stopPropagation();md.classList.toggle('show');ld.classList.remove('show')};d.onclick=function(){ld.classList.remove('show');md.classList.remove('show')};a(l)}()
+</script>
+</body>
+</html>

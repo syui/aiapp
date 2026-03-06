@@ -1,0 +1,14 @@
+{
+  "id": "aiat",
+  "name": "Aiat",
+  "domain": "at.syui.ai",
+  "scheme": "aiat",
+  "appUrl": "https://at.syui.ai/app",
+  "version": "1.111.0",
+  "category": "Social",
+  "description": "Aiat is a social networking application based on AT Protocol. Connect with your community on syu.is.",
+  "backLink": "syu.is",
+  "icon": "/static/app.png",
+  "os": "iOS 26.0+",
+  "price": "Free"
+}
