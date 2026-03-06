@@ -8,7 +8,7 @@
   "category": "Social",
   "description": "Aiat is a social networking application based on AT Protocol. Connect with your community on syu.is.",
   "backLink": "syu.is",
-  "icon": "/static/app.png",
+  "icon": "/static/icon.png",
   "os": "iOS 26.0+",
   "price": "Free"
 }
