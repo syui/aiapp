@@ -4,9 +4,9 @@ on:
   push:
     branches: [main]
     paths:
+      - 'icon/**'
       - 'web/src/sites/aicard.json'
-      - 'web/src/assets/aicard/**'
-      - 'web/src/assets/common/**'
+      - 'web/src/assets/**'
       - 'web/src/content/**'
       - 'web/src/templates/**'
       - 'web/src/types.ts'
@@ -24,6 +24,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Copy icons
+        run: mkdir -p web/src/assets/aicard && cp icon/ai.syui.card.png web/src/assets/aicard/icon.png
       - run: npm install
         working-directory: web
       - run: npm run build

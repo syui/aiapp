@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'icon/**'
       - 'rse/**'
   workflow_dispatch:
 
@@ -16,6 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+      - name: Copy icons
+        run: mkdir -p rse/public/service && cp icon/ai.syui.at.png icon/ai.syui.card.png icon/ai.syui.rse.png rse/public/service/
       - run: npm install
         working-directory: rse
       - run: npm run build

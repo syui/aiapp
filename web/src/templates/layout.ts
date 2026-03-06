@@ -8,7 +8,7 @@ export function layout(site: SiteConfig, title: string, content: string): string
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <title>${title} - ${site.name}</title>
-  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="icon" type="image/png" href="/static/icon.png">
   <style>${baseStyles}</style>
 </head>
 <body>
