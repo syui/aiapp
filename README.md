@@ -10,3 +10,14 @@
 
 `https://${APP}.syui.ai/privacy`
 
+## color
+
+|name|code|
+|---|---|
+|ai|`#F6E717`|
+|yui|`#4F4F4F`|
+|syui|`#EF454A`|
+|blue|`#0085FF`|
+|red|`#E53935`|
+|orange|`#FF8400`|
+
